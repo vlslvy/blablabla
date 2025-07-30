@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Выпадет вишня/яблоко</title>
+  <style>
+    body {
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    button {
+      padding: 20px 40px;
+      font-size: 24px;
+      background-color: #e60000;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #cc0000;
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="play()">нажми, и тебе выпадет вишня/яблоко</button>
+
+  <audio id="audio" src="https://files.catbox.moe/4jf77o.mp3"></audio>
+
+  <script>
+    function play() {
+      const audio = document.getElementById('audio');
+      audio.volume = 1.0;
+      audio.play().catch(e => {
+        alert('Не удалось воспроизвести звук: ' + e.message);
+        console.error(e);
+      });
+    }
+  </script>
+
+</body>
+</html>
